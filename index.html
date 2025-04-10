@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cardápio Digital</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        .secondary-image {
+            width: 100%;
+            height: 400px;
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+        }
+
+        .secondary-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            margin: 0;
+        }
+
+        .product {
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        .product-image {
+            width: 80px;
+            height: 80px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-logo">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGIgPWyL6kkndvblzUXkU-gt1sOFwabEICnQ&s" alt="Logo do Restaurante">
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#menu-section">Menu</a></li>
+            <li><a href="#contato">Contato</a></li>
+        </ul>
+        <div class="cart-icon">
+            <span class="cart-count">0</span>
+            <img src="https://media.istockphoto.com/id/1206806317/pt/vetorial/shopping-cart-icon-isolated-on-white-background.jpg?s=612x612&w=0&k=20&c=cl3NPzmnu0pRmaRGndYIejbHGe-atORf0JDjzmhX8Z8=" alt="Carrinho">
+        </div>
+    </nav>
+
+    <div class="secondary-image">
+        <img src="https://receitasdepesos.com.br/wp-content/uploads/2023/11/pastel-de-carne-moida.jpg.webp">
+    </div>
+
+    <h1 class="welcome-title">Seja Bem Vindo!</h1>
+
+    <div id="menu-section" class="categories">
+        <div class="category active" data-category="todos">
+            <h2>Todos</h2>
+        </div>
+        <div class="category" data-category="pasteis">
+            <h2>Pastéis</h2>
+        </div>
+        <div class="category" data-category="pasteis-doces">
+            <h2>Pastéis Doces</h2>
+        </div>
+        <div class="category" data-category="salgados">
+            <h2>Salgados</h2>
+        </div>
+        <div class="category" data-category="bebidas">
+            <h2>Bebidas</h2>
+        </div>
+    </div>
+
+    <div class="search-container">
+        <input type="text" id="searchInput" placeholder="Buscar produtos...">
+        <button id="searchButton">
+            <i class="fas fa-search"></i>
+            Buscar
+        </button>
+    </div>
+
+    <div class="products-container">
+        <!-- Pastéis Section -->
+        <div class="products" id="pasteis">
+            <h3>Pastéis</h3>
+            <div class="product">
+                <div class="product-image">
+                    <img src="https://i.pinimg.com/474x/f7/3c/41/f73c4138f7620c232e4053831bd0c1f9.jpg" alt="Pastel de Carne">
+                </div>
+                <h4>Pastel de Carne</h4>
+                <div class="product-right">
+                    <p>R$ 8,00</p>
+                    <button onclick="addToCart('Pastel de Carne', 8.00)">Adicionar ao Carrinho</button>
+                </div>
+            </div>
+            <div class="product">
+                <div class="product-image">
+                    <img src="https://storage.googleapis.com/domain-images/838d0c70-69bd-4ebc-bfd7-57ba2a4ddf9d/products/gallery_1f0b5772-d0a4-42de-99be-c03030a03377.jpg" alt="Pastel de Queijo">
+                </div>
+                <h4>Pastel de Queijo</h4>
+                <div class="product-right">
+                    <p>R$ 7,50</p>
+                    <button onclick="addToCart('Pastel de Queijo', 7.50)">Adicionar ao Carrinho</button>
+                </div>
+            </div>
+            <div class="product">
+                <div class="product-image">
+                    <img src="https://storage.googleapis.com/domain-images/838d0c70-69bd-4ebc-bfd7-57ba2a4ddf9d/products/gallery_206d7fc2-55b8-45a8-b6be-ae3b00caa42e.jpg" alt="Pastel de Frango">
+                </div>
+                <h4>Pastel de Frango</h4>
+                <div class="product-right">
+                    <p>R$ 8,50</p>
+                    <button onclick="addToCart('Pastel de Frango', 8.50)">Adicionar ao Carrinho</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pastéis Doces Section -->
+        <div class="products" id="pasteis-doces">
+            <h3>Pastéis Doces</h3>
+            <div class="product">
+                <div class="product-image">
+                    <img src="https://storage.googleapis.com/domain-images/838d0c70-69bd-4ebc-bfd7-57ba2a4ddf9d/products/gallery_83f46823-4e2c-4bbd-bee9-13a8118a6063.jpg" alt="Pastel de Brigadeiro">
+                </div>
+                <h4>Pastel de Brigadeiro</h4>
+                <div class="product-right">
+                    <p>R$ 15,00</p>
+                    <button onclick="addToCart('Pastel de Brigadeiro', 15.00)">Adicionar ao Carrinho</button>
+                </div>
+            </div>
+            <div class="product">
+                <div class="product-image">
+                    <img src="https://www.receiteria.com.br/wp-content/uploads/2020/12/Pastel-de-banana.jpg" alt="Pastel de Banana">
+                </div>
+                <h4>Pastel de Banana</h4>
+                <div class="product-right">
+                    <p>R$ 12,00</p>
+                    <button onclick="addToCart('Pastel de Banana', 12.00)">Adicionar ao Carrinho</button>
+                </div>
+            </div>
+            <div class="product">
+                <div class="product-image">
+                    <img src="https://www.receiteria.com.br/wp-content/uploads/2021/01/Pastel-de-nutella.jpg" alt="Pastel de Nutella">
+                </div>
+                <h4>Pastel de Nutella</h4>
+                <div class="product-right">
+                    <p>R$ 14,00</p>
+                    <button onclick="addToCart('Pastel de Nutella', 14.00)">Adicionar ao Carrinho</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Salgados Section -->
+        <div class="products" id="salgados">
+            <h3>Salgados</h3>
+            <div class="product">
+                <div class="product-image">
+                    <img src="https://receitinhas.com.br/wp-content/uploads/2022/09/coxinha-tradicional-730x365.jpg" alt="Coxinha">
+                </div>
+                <h4>Coxinha</h4>
+                <div class="product-right">
+                    <p>R$ 6,00</p>
+                    <button onclick="addToCart('Coxinha', 6.00)">Adicionar ao Carrinho</button>
+                </div>
+            </div>
+            <div class="product">
+                <div class="product-image">
+                    <img src="https://www.receiteria.com.br/wp-content/uploads/2021/03/kibe.jpg" alt="Kibe">
+                </div>
+                <h4>Kibe</h4>
+                <div class="product-right">
+                    <p>R$ 7,00</p>
+                    <button onclick="addToCart('Kibe', 7.00)">Adicionar ao Carrinho</button>
+                </div>
+            </div>
+            <div class="product">
+                <div class="product-image">
+                    <img src="https://www.receiteria.com.br/wp-content/uploads/2020/11/esfiha-de-carne.jpg" alt="Esfiha de Carne">
+                </div>
+                <h4>Esfiha de Carne</h4>
+                <div class="product-right">
+                    <p>R$ 8,00</p>
+                    <button onclick="addToCart('Esfiha de Carne', 8.00)">Adicionar ao Carrinho</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bebidas Section -->
+        <div class="products" id="bebidas">
+            <h3>Bebidas</h3>
+            <div class="product">
+                <div class="product-image">
+                    <img src="https://mercadoorganico.com/6722-large_default/coca-cola-lata-350ml.jpg" alt="Coca-Cola">
+                </div>
+                <h4>Coca-Cola 350ml</h4>
+                <div class="product-right">
+                    <p>R$ 5,00</p>
+                    <button onclick="addToCart('Coca-Cola 350ml', 5.00)">Adicionar ao Carrinho</button>
+                </div>
+            </div>
+            <div class="product">
+                <div class="product-image">
+                    <img src="https://www.receiteria.com.br/wp-content/uploads/2021/04/guarana-antartica.jpg" alt="Guaraná Antarctica">
+                </div>
+                <h4>Guaraná Antarctica</h4>
+                <div class="product-right">
+                    <p>R$ 5,50</p>
+                    <button onclick="addToCart('Guaraná Antarctica', 5.50)">Adicionar ao Carrinho</button>
+                </div>
+            </div>
+            <div class="product">
+                <div class="product-image">
+                    <img src="https://www.receiteria.com.br/wp-content/uploads/2020/10/suco-natural-de-laranja.jpg" alt="Suco Natural de Laranja">
+                </div>
+                <h4>Suco Natural de Laranja</h4>
+                <div class="product-right">
+                    <p>R$ 7,00</p>
+                    <button onclick="addToCart('Suco Natural de Laranja', 7.00)">Adicionar ao Carrinho</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="cartModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Seu Carrinho</h2>
+            <div id="cartItems"></div>
+            <div class="cart-total">
+                <h3>Total: R$ <span id="cartTotal">0.00</span></h3>
+            </div>
+            <button id="checkoutButton" class="checkout-button">Finalizar Compra</button>
+        </div>
+    </div>
+
+    <!-- Checkout Modal -->
+    <div id="checkoutModal" class="modal">
+        <div class="modal-content">
+            <span class="close-checkout">&times;</span>
+            <h2>Finalizar Compra</h2>
+            
+            <div class="checkout-summary">
+                <h3>Resumo do Pedido</h3>
+                <div id="checkoutItems"></div>
+                <div class="checkout-total">
+                    <h3>Total a Pagar: R$ <span id="checkoutTotal">0.00</span></h3>
+                </div>
+            </div>
+
+            <div class="checkout-form">
+                <h3>Endereço de Entrega</h3>
+                <div class="form-group">
+                    <input type="text" id="street" placeholder="Rua" required>
+                    <input type="text" id="number" placeholder="Número" required>
+                    <input type="text" id="complement" placeholder="Complemento">
+                    <input type="text" id="neighborhood" placeholder="Bairro" required>
+                </div>
+
+                <h3>Forma de Pagamento</h3>
+                <div class="payment-options">
+                    <div class="payment-option">
+                        <input type="radio" id="pix" name="payment" value="pix">
+                        <label for="pix">PIX</label>
+                    </div>
+                    <div class="payment-option">
+                        <input type="radio" id="credit" name="payment" value="credit">
+                        <label for="credit">Cartão de Crédito</label>
+                    </div>
+                    <div class="payment-option">
+                        <input type="radio" id="debit" name="payment" value="debit">
+                        <label for="debit">Cartão de Débito</label>
+                    </div>
+                    <div class="payment-option">
+                        <input type="radio" id="cash" name="payment" value="cash">
+                        <label for="cash">Dinheiro</label>
+                    </div>
+                </div>
+
+                <!-- Campo para troco que aparece apenas quando "Dinheiro" é selecionado -->
+                <div id="changeContainer" style="display: none;">
+                    <input type="number" id="cashAmount" placeholder="Valor em dinheiro">
+                    <p>Troco: R$ <span id="changeAmount">0.00</span></p>
+                </div>
+            </div>
+
+            <button id="confirmOrder" class="confirm-button">Confirmar Pedido</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
