@@ -1,12 +1,12 @@
 :root {
-    --primary-green: #2ECC71;
-    --secondary-green: #27AE60;
+    --primary-green: #1c8b4a;
+    --secondary-green: #2b9c5a;
     --primary-red: #3aa519;
     --secondary-red: #21911e;
     --primary-yellow: #F1C40F;
     --secondary-yellow: #F39C12;
     --accent-red: #E74C3C;
-    --accent-green: #2ECC71;
+    --accent-green: #30945a;
     --text-dark: #2C3E50;
     --text-light: #ECF0F1;
     --bg-light: #FFF9E6; /* Keeping the light yellow background */
@@ -237,16 +237,13 @@ body {
 }
 
 .product-image {
-    width: 80px;
-    height: 80px;
+    width: 120px;         /* Increased width */
+    height: 120px;        /* Increased height */
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
-}
-
-.product-image:hover {
-    transform: scale(1.05);
+    position: relative;
 }
 
 .product-image img {
@@ -256,8 +253,19 @@ body {
     transition: transform 0.3s ease;
 }
 
-.product:hover .product-image img {
+.product-image:hover img {
     transform: scale(1.1);
+}
+
+/* Caption Styling */
+.product-caption {
+    display: block;
+    font-size: 0.8rem;
+    text-align: center;
+    padding: 4px 0;
+    background: #fff;
+    color: var(--text-dark);
+    opacity: 0.9;
 }
 
 .product:last-child {
